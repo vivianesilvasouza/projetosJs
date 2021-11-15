@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vamos contar </title>
+    <link rel="stylesheet" href="estilo.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>vamos contar</h1>
+    </header>
+    <section>
+        <div id="msg">
+            <p>Início:
+                <input type="number" name="inicio" id="txtini" min="0">
+            </p>
+            <p>Fim:
+                <input type="number" name="fim" id="txtf" min="0">
+            </p>
+            <p>Passo:
+                <input type="number" name="passo" id="txtp" min="0">
+            </p>
+            <p><input type="button" value="Contar" onclick="contar()"></p>
+        </div>
+        <div id="res">
+            Preencha os dados acima para ver o resultado!
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; CursoemVideo</p>
+    </footer>
+
+</body>
+<script>
+    function contar() {
+        let inicio = window.document.getElementById('txtini')
+        let fim = window.document.getElementById('txtf')
+        let passo = window.document.getElementById('txtp')
+        let res = window.document.getElementById('res')
+
+        if (inicio.value.length == 0 || fim.value.length == 0 || passo.value.length == 0) {
+            window.alert('[ERRO] Falta dados')
+        } else {
+            res.innerHTML = 'contando...'
+            let i = Number(inicio.value)
+            let f = Number(fim.value)
+            let p = Number(passo.value)
+
+            for (let c = i; c <= f; c += p) {
+                res.innerHTML += `${c}`
+            }
+        }
+
+
+    }
+
+</script>
+
+</html>

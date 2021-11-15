@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analidor de Número</title>
+    <link rel="stylesheet" href="estilo.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>Analidor de Número</h1>
+    </header>
+
+    <div id="msg">
+        <p>Número (entre 1 e 100):
+            <input type="number" name="numero" id="txtinum" min="0">
+            <input type="button" value="Adicionar" onclick="adicionar()">
+            <br>
+        <section name='analisar' id='seltabuada' size="6"></section>
+        <br><input type="button" value="Finalizar" onclick="finalizar()">
+
+        </p>
+
+
+    </div>
+    <div id="res">
+
+    </div>
+
+
+    <footer>
+        <p>&copy; CursoemVideo</p>
+    </footer>
+
+</body>
+<script>
+
+    let numero = window.document.getElementById('txtinum')
+    let analisar = window.document.getElementById('seltabuada')
+    let res = window.document.querySelector('div#res')
+    let valores = []
+
+    function isNumero(n) {
+        if (Number(n) >= 1 && Number(n) <= 100) {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    function inlista(n, L) {
+        if (L.indexOf(Number(n)) != -1) {
+            return true
+        } else {
+            return false
+        }
+
+    }
+    function adicionar() {
+        if (isNumero(numero.value) && !inlista(numero.value, valores)) {
+            valores.push(Number(numero.value))
+            let item = document.createElement('option')
+            item.text = `valor ${numero.value} adicionado`
+            analisar.appendChild(item)
+            res.innerHTML = ''
+
+        } else {
+            window.alert('[ERRO] Falta dados')
+
+        }
+        numero.value = '' //pra apagar
+        numero.focus()
+    }
+
+    function finalizar() {
+        if (valores.length == 0) {
+            window.alert('adicione valores antes de finalizar!')
+        } else {
+            let tot = valores.length
+            let maior = valores[0]
+            let menor = valores[0]
+            let soma = 0
+            let media = 0
+            for (let pos in valores) {
+                soma += valores[pos]
+                if (valores[pos] > maior)
+                    maior = valores[pos]
+                if (valores[pos] < menor)
+                    menor = valores[pos]
+            }
+            media = soma / tot
+            res.innerHTML = ''
+            res.innerHTML += `<p>Ao todo, temos ${tot} números cadastrados.<p>`
+            res.innerHTML += `<p>O valor maior informado foi ${maior}.<p>`
+            res.innerHTML += `<p> O valor menor informado foi ${menor}.<p>`
+            res.innerHTML += `<p> Somando de todos os valores, temos ${soma}.<p>`
+            res.innerHTML += `<p> A média de todos os valores digitados é ${media}.<p>`
+        }
+    }
+
+</script>
+
+</html>

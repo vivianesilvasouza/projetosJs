@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <section>
+            <h1>O seu número é: <span id="numero-titulo">0</span></h1>
+        </section>
+        <div id="texto">
+            texto
+        </div>
+
+        <script>
+        const numero = Number (prompt('digite um número:'));
+        const numeroTitulo = document.getElementById('numero-titulo');
+        const texto = document.getElementById('texto');
+
+        numeroTitulo.innerHTML = numero
+        texto.innerHTML += `<p>seu número - 2 é ${numero - 2}.</p>`
+        texto.innerHTML += `<p>Raiz quadrada: ${numero **0.5}.</p>`
+        texto.innerHTML += ` ${numero} é inteiro: ${Number.isInteger(numero)} .</p>`
+        texto.innerHTML += `<p>Arredondando para baixo: ${Math.floor(numero)}.</p>`
+        texto.innerHTML +=`<p>Arredondando para cima: ${Math.ceil(numero)}.</p>`
+        texto.innerHTML +=`<p>com duas casas decimais:: ${numero.toFied(2)}.</p>`
+
+        </script>
+    
+    </body>
+</html>

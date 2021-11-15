@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada js </title>
+    <link rel="stylesheet" href="estilo.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>Aprendendo Tabuada</h1>
+    </header>
+    <section>
+        <div id="msg">
+            <p>Número:
+                <input type="number" name="numero" id="txtnume" min="0">
+                <input type="button" value="Gerar Tabuada" onclick="contar()">
+            </p>
+        </div>
+        <div id="res">
+            <section name='tabuada' id='seltabuada' size="5">
+                <!-- <option value="v1"></option> -->
+            </section>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; CursoemVideo</p>
+    </footer>
+
+</body>
+<script>
+    function contar() {
+        let numero = window.document.getElementById('txtnume')
+
+        let tabuada = window.document.getElementById('seltabuada')
+
+        if (numero.value.length == 0) {
+            window.alert('[ERRO] Falta dados')
+        } else {
+
+            let n = Number(numero.value)
+            let c = 1
+            tabuada.innerHTML = '' //dar uma limpada 
+            while (c <= 10) { //fazendo tabuada
+                let item = document.createElement('option')
+                item.text = `${n} x ${c}=${n * c}`
+                tabuada.appendChild(item)
+                c++
+            }
+        }
+
+
+    }
+
+</script>
+
+</html>

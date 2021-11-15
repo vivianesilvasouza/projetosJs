@@ -1,0 +1,84 @@
+<html>
+    <head><title>Anotação de estudo js </title></head>
+   <body>
+       <script>
+       
+    /*(number + number) para adição
+       (string + string) para concatenação 
+
+       -------------aula 6----------------------------------
+       'eu estou apredendo s' obs: não faz interpolação
+       'eu estou apredendo + s' obs: usa concatenação
+      'eu estou apredendo ${s}' obs: usa tempalte string 
+     s.length obs: quantos caracteres a string tem 
+     s.toUpperCase() obs: tudo para 'MAISÚSCULAS'
+     tudo para 'minúsculas'
+
+
+---------------------formatação de dinheiro local-------------------------
+      var n1 = 145.5
+undefined
+> n1
+145.5
+> n1.toFixed(2)
+'145.50'
+> n1.toFixed(2)('pt-br',{style: 'currency', currency>'BRL'})
+n1.toFixed(2)('pt-br',{style: 'currency', currency>'BRL'})
+                                                  ^
+
+Uncaught SyntaxError: Unexpected token '>'
+> n1.toFixed(2)('pt-BR',{style: 'currency', currency:'BRL'})
+Uncaught TypeError: n1.toFixed(...) is not a function
+> n1.toFixed(2).replace('.',',')
+'145,50'
+> n1.toLocaleString('pt-BR',{style: 'currency', currency:'BRL'})
+'R$ 145,50'
+> n1.toLocaleString('pt-BR',{style: 'currency', currency:'USD'})
+'US$ 145,50'
+> n1.toLocaleString('pt-BR',{style: 'currency', currency:'EUR'})
+'€ 145,50'
+
+----------------aula 8------------------------------------------
+ordem de precedência dos operadores ari
+
+()
+**
+* / %
++ -
+
+> 5+3/4
+5.75
+>
+
+---------simplicificado------------------
+
+ var n = 3
+  n = n - 4 ............. n -= 4
+  n = n * 5 ............. n *= 5
+  n = n / 2 ............. n /= 2
+  n = n ** 2 ............ n %= 2
+  n = n %5 
+  
+>
+<
+>=
+
+-----------------variaveis simples-----------------------------
+
+só consegue armazenar um valor por vez 
+
+
+----------------- variavei compostas----------------------------
+
+devem ser capazer de armazenar varios valores em uma mesma 
+estrutura.
+
+
+     
+     
+     
+     */
+     
+     </script>
+   </body>
+</html>
